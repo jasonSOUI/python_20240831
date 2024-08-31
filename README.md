@@ -7,4 +7,4 @@
 + 查看[Codespaces](https://github.com/codespaces)(平時記得要確認有關閉) : 
 + 安裝Jupyter 
 
-### 202400907 python pico lesson 02 
+### 20240907 python pico lesson 02 
