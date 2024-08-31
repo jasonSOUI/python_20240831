@@ -6,4 +6,4 @@ python pico lesson 01
 + picoWH (Wifi版本)
 + [colab](https://colab.research.google.com/) (雲端python開發環境)
 + 查看[Codespaces](https://github.com/codespaces)(平時記得要確認有關閉) : 
-
++ 安裝Jupyter 
