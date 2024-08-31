@@ -1,6 +1,6 @@
 # python_20240831
 python pico lesson 01
-
++ [20240831 Python課程錄影](https://www.youtube.com/watch?v=Xr1jz5rSk7M)
 + 課程Google meet : https://meet.google.com/wuv-njsa-ejb
 + 課程Github : https://github.com/roberthsu2003/pico_W
 + picoWH (Wifi版本)
