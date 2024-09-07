@@ -23,4 +23,7 @@ conda create --name venv1 python=3.11
 conda activate venv1
 # 離開虛擬環境
 conda deactivate    
-     
+# 刪除虛擬環境
+conda env remove --name venv1
+# conda更新 
+conda update conda
