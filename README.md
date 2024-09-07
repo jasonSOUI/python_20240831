@@ -8,3 +8,6 @@
 + 安裝Jupyter 
 
 ### 20240907 python pico lesson 02 
++ 安裝[github](https://desktop.github.com/download/)
++ 安裝[vscode](https://code.visualstudio.com/)
++ 安裝[git](https://git-scm.com/download/win)
