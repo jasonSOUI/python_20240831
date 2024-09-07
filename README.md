@@ -11,3 +11,16 @@
 + 安裝[github](https://desktop.github.com/download/)
 + 安裝[vscode](https://code.visualstudio.com/)
 + 安裝[git](https://git-scm.com/download/win)
++ 安裝[Miniconda](https://docs.anaconda.com/miniconda/index.html)
++ [conde環境設定](https://github.com/roberthsu2003/python/tree/master/mini_conda)
+
+```bash
+# 查看環境
+conda env list
+# 建立venv1虛擬環境，python版本3.11
+conda create --name venv1 python=3.11
+# 進入虛擬環境
+conda activate venv1
+# 離開虛擬環境
+conda deactivate    
+     
