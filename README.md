@@ -38,3 +38,43 @@ git config --global credential.name "jason@soui.com.tw"
 # wifi
 wifi : A590301 / A590301AA
 `````
+
+```python
+# https://depart.femh.org.tw/dietary/3OPD/BMI.htm
+def getBMI(height, weight):
+
+    try:
+        # 公分轉公尺
+        _height = height * Decimal(0.01) 
+
+        # BMI = 體重(公斤) / 身高2(公尺2)
+        bmi = weight / (_height ** 2) 
+        bmi = bmi.quantize(Decimal('0.1'), rounding=ROUND_HALF_UP)
+        
+        # 狀態判斷
+        status = ""
+        if bmi >= 35:               # 重度肥胖：BMI≧35
+            status = "重度肥胖"
+        elif bmi >= 30:             # 中度肥胖：30≦BMI＜35
+            status = "中度肥胖"
+        elif bmi >= 27 :            # 輕度肥胖：27≦BMI＜30
+             status = "輕度肥胖"  
+        elif bmi >= 24:             # 過重：24≦BMI＜27
+            status = "過重"        
+        elif bmi < 18.5:             # 體重過輕 BMI＜18.5
+            status = "體重過輕"         
+        else:
+            status = "正常範圍"
+
+        return "您的BMI值是{}\n您的體重{}".format(bmi, status)
+    except Exception as e:
+        traceback.print_exc()
+        print("未知錯誤", e)
+
+try:
+    height = Decimal(input("請輸入身高(公分)"))
+    weight = Decimal(input("請輸入體重(公尺)"))
+    print(getBMI(height, weight))
+except Exception as e:
+    print("請輸入正確的身高、體重，須為數字")
+```
