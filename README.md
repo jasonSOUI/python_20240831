@@ -34,4 +34,7 @@ git config --global user.name "jason"
 git config --global user.email "jason@soui.com.tw"
 git config --global pull.rebase false
 git config --global credential.name "jason@soui.com.tw"
+
+# wifi
+wifi : A590301 / A590301AA
 `````
