@@ -38,3 +38,9 @@ git config --global credential.name "jason@soui.com.tw"
 # wifi
 wifi : A590301 / A590301AA
 `````
+
+### 20240914 python pico lesson 03
++ while、for迴圈
++ function 參數、回傳值(tuple、list、dict)
++ import package、module
++ [https://pypi.org/](https://pypi.org/)
