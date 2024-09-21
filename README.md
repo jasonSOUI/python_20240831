@@ -37,6 +37,7 @@ git config --global credential.name "jason@soui.com.tw"
 
 # wifi
 wifi : A590301 / A590301AA
+server : piRobert0301.local
 `````
 
 ### 20240914 python pico lesson 03
