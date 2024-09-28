@@ -51,3 +51,5 @@ server : piRobert0301.local
 + 安裝到實體pico(按著白色按鈕插入USB後放開、會讀取到RPI-RP2磁碟區，將RPI_PICO_W-20240602-v1.23.0.uf2複製到RPI-RP2磁碟區) [Raspberry Pi Pico W](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html)
 + 安裝[Thonny](https://thonny.org/)
 
+### 20240928 python pico lesson 05
+
