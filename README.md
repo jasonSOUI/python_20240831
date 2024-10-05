@@ -54,3 +54,5 @@ server : piRobert0301.local
 ### 20240928 python pico lesson 05
 + 安裝[mqtt-explorer](https://mqtt-explorer.com/)
 + MQTT 192.168.0.252 pi/raspberry
+
+### 20241005 python pico lesson 06
