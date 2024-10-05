@@ -35,8 +35,8 @@ def connect():
     #處理錯誤
     if wlan.status() != 3:
         print('連線失敗,重新開機')
-        #raise RuntimeError('連線失敗') #開發階段,出現錯誤,中斷執行
-        wdt = WDT(timeout=2000) #無連接電腦時,重新開機(成品時,請使用這個)
+        raise RuntimeError('連線失敗') #開發階段,出現錯誤,中斷執行
+        #wdt = WDT(timeout=2000) #無連接電腦時,重新開機(成品時,請使用這個)
         wdt.feed()
     else:
         print('連線成功')
