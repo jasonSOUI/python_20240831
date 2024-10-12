@@ -56,3 +56,7 @@ server : piRobert0301.local
 + MQTT 192.168.0.252 pi/raspberry
 
 ### 20241005 python pico lesson 06
+
+
+### 20241012 python pico lesson 07
+ + 安裝MQTT套件 pip install paho-mqtt

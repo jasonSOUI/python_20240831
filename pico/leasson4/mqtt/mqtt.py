@@ -16,7 +16,7 @@ def set_light_value():
     light_value = adc_light.read_u16() # 光敏感測
     conversion_factor = 3.3 / (65535)  # 電壓轉換率  
     temperature = 27 - (adc.read_u16() * conversion_factor - 0.706)/0.001721 # 溫度
-    print(f'光敏感測:{light_value}, 溫度:{temperature}')
+    #print(f'光敏感測:{light_value}, 溫度:{temperature}')
 
 
 def main():
@@ -34,8 +34,8 @@ def main():
             result = abs(light_value - last_light_value)
             
             if(result > 1000):
-                mqtt.publish(TOPIC, f'{light_value}')
-                print("發佈:", light_value)
+                mqtt.publish(TOPIC, f'{temperature}')
+                print("發佈:", temperature)
             
             time.sleep_ms(2000)
     except Exception as e:
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     # Default MQTT server to connect to
     SERVER = "192.168.0.252"
     CLIENT_ID = binascii.hexlify(machine.unique_id())
-    TOPIC = b"SA-42/雞舍/光敏值"
+    TOPIC = b"SA-42/temperature"
     
     #sensor setup
     adc = ADC(4) #內建溫度感測器
