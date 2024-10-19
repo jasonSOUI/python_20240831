@@ -61,4 +61,8 @@ server : piRobert0301.local
 ### 20241012 python pico lesson 07
  + 安裝MQTT套件 pip install paho-mqtt
 
-### 20241019 
+### 20241019 python pico lesson 15
+ + python安裝預設套件(requirements.txt)
+`````
+pip install -r requirements.txt
+`````
