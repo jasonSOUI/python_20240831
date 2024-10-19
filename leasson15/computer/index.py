@@ -17,7 +17,7 @@ def on_message(client, userdata, msg):
         if org_temperature != value:
             org_temperature = value
             dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            data = [[dt, "溫度", f'{org_temperature}']]
+            data = [[dt, topic, "溫度", f'{org_temperature}']]
             record(data)
             print(f'{dt} - 溫度:{org_temperature}')
     #print(f"Received message '{msg.payload.decode()}' on topic '{msg.topic}'")
@@ -33,9 +33,9 @@ def main():
     client.connect("192.168.0.252", 1883, 60)
     client.loop_forever()
 
-def record(data):
+def record(data:list):
     today = datetime.now()
-    data_path = os.getcwd()
+    data_path = os.path.join(os.getcwd(), "data")
     data_dir = today.strftime("%Y%m%d")
     data_file_path = os.path.join(data_path, data_dir) + ".csv"
     create_csv_file(data_file_path, data)
