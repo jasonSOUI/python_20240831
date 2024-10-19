@@ -23,10 +23,10 @@ def do_thing(t):
     reading = adc.read_u16() * conversion_factor
     temperature = 27 - (reading - 0.706)/0.001721  
     print(f'溫度:{temperature}')
-    mqtt.publish('SA-01/TEMPERATURE', f'{temperature}')
+    mqtt.publish('SA-42/TEMPERATURE', f'{temperature}')
     adc_value = adc_light.read_u16()
     print(f'光線:{adc_value}')
-    mqtt.publish('SA-01/LINE_LEVEL', f'{adc_value}')
+    mqtt.publish('SA-42/LINE_LEVEL', f'{adc_value}')
     
     
 def do_thing1(t):
@@ -39,7 +39,7 @@ def do_thing1(t):
     pwm.duty_u16(duty)
     light_level = round(duty/65535*10)
     print(f'可變電阻:{light_level}')
-    mqtt.publish('SA-01/LED_LEVEL', f'{light_level}')
+    mqtt.publish('SA-42/LED_LEVEL', f'{light_level}')
     
 
 def main():
@@ -64,7 +64,7 @@ if __name__ == '__main__':
         CLIENT_ID = binascii.hexlify(machine.unique_id())
         mqtt = MQTTClient(CLIENT_ID, SERVER,user='pi',password='raspberry')
         mqtt.connect()
-        t1 = Timer(period=2000, mode=Timer.PERIODIC, callback=do_thing)
-        t2 = Timer(period=500, mode=Timer.PERIODIC, callback=do_thing1)   
+        t1 = Timer(period=5000, mode=Timer.PERIODIC, callback=do_thing)
+        t2 = Timer(period=5000, mode=Timer.PERIODIC, callback=do_thing1)   
     
     main()

@@ -13,13 +13,13 @@ def on_message(client, userdata, msg):
     global org_temperature
     topic = msg.topic
     value = float(msg.payload.decode())
-    if topic == 'SA-42/temperature':
+    if topic == 'SA-42/LINE_LEVEL':
         if org_temperature != value:
             org_temperature = value
             dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            data = [[dt, "溫度", f'{org_temperature}']]
+            data = [[dt, "光線", f'{org_temperature}']]
             record(data)
-            print(f'{dt} - led_value:{org_temperature}')
+            print(f'{dt} - 光線:{org_temperature}')
     #print(f"Received message '{msg.payload.decode()}' on topic '{msg.topic}'")
 
 def main():
