@@ -26,12 +26,13 @@ def do_thing(t):
     print(f'溫度:{_temperature}')
     mqtt.publish('SA-42/TEMPERATURE', f'{_temperature}')
     adc_value = adc_light.read_u16()
-    line_state = "開燈" if adc_value > 5000 else "關燈"
-    line_state_encode = line_state.encode('utf-8')
+    line_status = 1 if adc_value > 5000 else 0
+    #line_state_encode = line_state.encode('utf-8')
     #adc_value = adc_value >> 4
     #level = adc_value // 409
-    print(f'光線:{adc_value},{line_state}')
-    mqtt.publish('SA-42/LINE_LEVEL', f'{line_state_encode}')
+    print(f'光線:{adc_value},{line_status}')
+    mqtt.publish('SA-42/LINE_LEVEL', f'{adc_value}')
+    mqtt.publish('SA-42/LINE_STATUS', f'{line_status}')
     
     
 def do_thing1(t):
