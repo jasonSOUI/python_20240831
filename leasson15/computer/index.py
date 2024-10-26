@@ -2,6 +2,9 @@ import paho.mqtt.client as mqtt
 from datetime import datetime
 import os
 import csv
+import sqlite3
+from sqlite3 import Error
+import tools
 
 org_values = {}
 
@@ -48,7 +51,7 @@ def decode_utf8_string(encoded_string):
 
 def on_connect(client, userdata, flags, reason_code, properties):
     #連線bloker成功時,只會執行一次
-    client.subscribe("SA-42/#")
+    client.subscribe("SA-01/#")
 
 def on_message(client, userdata, msg):
     topic = msg.topic
@@ -70,6 +73,7 @@ def on_message(client, userdata, msg):
         data = [[dt, topic, f'{value}']]
         print(f"資料有異動:{data[0]}")
         record(data)
+        tools.record_to_db(dt, topic, f'{value}')
 
 def main():
     client = mqtt.Client(callback_api_version=mqtt.CallbackAPIVersion.VERSION2)
@@ -101,6 +105,9 @@ def create_csv_file(file_path, data):
     with open(file_path, 'a', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows(data)
+
+def record_to_db():
+    pass
 
 if __name__ == "__main__":
     main()
